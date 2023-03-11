@@ -1,0 +1,10 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+    - name: chat_realtime
+      src: ./
+      engine: nodejs14
+      run: node server.js
+      primary: false
+      public_routes:
+          - "/*"
