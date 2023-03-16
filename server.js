@@ -13,16 +13,11 @@ server.listen(process.env.PORT || 3000);
 let listCustomer = [];
 
 io.on("connection", (socket) => {
-    // console.log("user conet" + socket.id);
-
     socket.on("khachhang-gui-thongtin", (data) => {
         listCustomer.push(new khachHang(data.name, data.phone, data.email));
-        console.log(listCustomer);
         io.sockets.emit("servet-gui-ds", listCustomer);
     });
-    socket.on("disconnect", () => {
-        // console.log("user disconnected" + socket.id);
-    });
+    socket.on("disconnect", () => {});
 });
 
 class khachHang {
