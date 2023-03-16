@@ -1,4 +1,4 @@
-const socket = io("https://chat_realtime-1-g4875677.deta.app", {
+const socket = io("https://chat-realtime.onrender.com", {
     transports: ["websocket"],
 });
 
